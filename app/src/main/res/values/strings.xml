@@ -17,5 +17,6 @@
     <string name="pages"> pages</string>
 
     <string name="book_name_mock">Quilting in Black and White</string>
+    <string name="title_activity_detail">DetailActivity</string>
 
 </resources>

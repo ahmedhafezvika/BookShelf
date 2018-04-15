@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="@dimen/vertical_margin"
     android:layout_marginStart="@dimen/horizontal_margin"
-    android:layout_marginEnd="@dimen/horizontal_margin">
+    android:layout_marginEnd="@dimen/horizontal_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.ahmedhafez.bookshelf.DetailActivity"
+    tools:showIn="@layout/activity_detail">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -182,4 +188,5 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorAmber800"/>
     </LinearLayout>
+
 </ScrollView>

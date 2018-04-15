@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,41 +9,56 @@
     tools:context="com.ahmedhafez.bookshelf.SearchActivity"
     tools:showIn="@layout/activity_search">
 
-    <EditText
-        android:orientation="horizontal"
-        android:id="@+id/search_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/search_bar_hint"
-        android:layout_margin="@dimen/search_bar_margin"
-        android:inputType="text"
-        android:gravity="center_horizontal"/>
-
     <LinearLayout
+        android:id="@+id/search_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="6">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
-
-        <Button
-            android:id="@+id/search_button"
-            android:layout_width="0dp"
+        <EditText
+            android:orientation="horizontal"
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/search_button_text"
-            android:textSize="@dimen/search_button_text_size"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="4"
-            android:textColor="@color/colorAccent"/>
+            android:hint="@string/search_bar_hint"
+            android:layout_margin="@dimen/search_bar_margin"
+            android:inputType="text"
+            android:gravity="center_horizontal"/>
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="6">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/search_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/search_button_text"
+                android:textSize="@dimen/search_button_text_size"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="4"
+                android:textColor="@color/colorAccent"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
-</LinearLayout>
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>

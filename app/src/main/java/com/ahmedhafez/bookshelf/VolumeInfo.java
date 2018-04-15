@@ -35,7 +35,7 @@ public class VolumeInfo {
     private int ratingCount;
 
     @SerializedName("averageRating")
-    private int averageRating;
+    private double averageRating;
 
     @SerializedName("authors")
     private List<String> authors;
@@ -98,7 +98,7 @@ public class VolumeInfo {
         return ratingCount;
     }
 
-    public int getAverageRating() {
+    public double getAverageRating() {
         return averageRating;
     }
 
