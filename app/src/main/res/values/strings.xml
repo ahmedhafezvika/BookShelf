@@ -6,8 +6,16 @@
     <string name="search_button_text">Search</string>
     <string name="title_activity_shelf">ShelfActivity</string>
 
-
-
+    <string name="category">Categories: </string>
+    <string name="publish_date">Publish date: </string>
+    <string name="publisher">Publisher: </string>
+    <string name="isbn">ISBN: </string>
+    <string name="description">Description:</string>
+    <string name="raters">Raters: </string>
+    <string name="rate">Rate: </string>
+    <string name="language">Language: </string>
+    <string name="pages"> pages</string>
 
     <string name="book_name_mock">Quilting in Black and White</string>
+
 </resources>
