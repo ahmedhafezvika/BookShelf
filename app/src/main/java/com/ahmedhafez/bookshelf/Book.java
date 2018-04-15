@@ -1,5 +1,6 @@
 package com.ahmedhafez.bookshelf;
 
+import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 /**
@@ -7,16 +8,23 @@ import java.util.List;
  */
 
 public class Book {
+
+    @SerializedName("id")
     private String id;
-    private String title;
-    private String publisher;
-    private String publishDate;
-    private String description;
-    private String thumbnail;
-    private String language;
-    private String previewLink;
-    private int pageCount, ratingCount, averageRating;
-    private boolean pdfAvailable;
-    private List<String> authors;
-    private List<String> categories;
+
+    @SerializedName("volumeInfo")
+    private VolumeInfo volumeInfo;
+
+    public Book(String id, VolumeInfo volumeInfo) {
+        this.id = id;
+        this.volumeInfo = volumeInfo;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public VolumeInfo getVolumeInfo() {
+        return volumeInfo;
+    }
 }

@@ -14,6 +14,10 @@ import android.widget.EditText;
 
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class SearchActivity extends AppCompatActivity implements View.OnClickListener{
 
     private EditText searchBar;
@@ -67,49 +71,46 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         switch (view.getId()) {
             case R.id.search_button:
                 String name = searchBar.getText().toString();
+                searchWithName(name);
                 break;
         }
     }
 
     private void searchWithName (String name) {
-
+        GetBooks booksTask = new GetBooks();
+        booksTask.execute(name);
     }
 
-    private class GetShowsTask extends AsyncTask<String, Void, List<TvShow>> {
+    private class GetBooks extends AsyncTask<String, Void, List<Book>> {
 
-        private ShowsResponse showsResponse;
-        private List<TvShow> shows;
-        private String sortType;
-        private String key;
-        private int pageNum;
+        private BooksResponse bookResponse;
+        private List<Book> books;
+        private String name;
 
         @Override
-        protected List<TvShow> doInBackground(String... params) {
-            sortType = params[0];
-            key = params[1];
-            pageNum = Integer.parseInt(params[2]);
+        protected List<Book> doInBackground(String... params) {
+            name = params[0];
 
             RetrofitInterface apiCall = RetrofitBuilder.getRetrofit().create(RetrofitInterface.class);
-            Call<ShowsResponse> call = apiCall.getShows(sortType, key, pageNum);
-            call.enqueue(new Callback<ShowsResponse>() {
+            Call<BooksResponse> call = apiCall.getBooks("intitle:" + name);
+            call.enqueue(new Callback<BooksResponse>() {
                 @Override
-                public void onResponse(Call<ShowsResponse>call, Response<ShowsResponse> response) {
-                    showsResponse = response.body();
-                    UtilsMethods.setTotalPages(sortType, showsResponse.getTotalPages());
-                    shows = showsResponse.getShows();
-                    showsReceiver.handleGetShowsCallbackResponse(shows, sortType);
+                public void onResponse(Call<BooksResponse>call, Response<BooksResponse> response) {
+                    bookResponse = response.body();
+                    books = bookResponse.getBooks();
+
                 }
 
                 @Override
-                public void onFailure(Call<ShowsResponse>call, Throwable t) {
+                public void onFailure(Call<BooksResponse>call, Throwable t) {
                     // show internet error message
                 }
             });
-            return shows;
+            return books;
         }
 
         @Override
-        protected void onPostExecute(List<TvShow> shows) {
+        protected void onPostExecute(List<Book> books) {
             // notify
         }
     }
