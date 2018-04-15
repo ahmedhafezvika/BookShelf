@@ -1,4 +1,4 @@
-package com.ahmedhafez.bookshelf;
+package com.ahmedhafez.bookshelf.models;
 
 import com.google.gson.annotations.SerializedName;
 

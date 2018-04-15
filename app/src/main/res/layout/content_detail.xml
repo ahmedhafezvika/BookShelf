@@ -8,7 +8,7 @@
     android:layout_marginStart="@dimen/horizontal_margin"
     android:layout_marginEnd="@dimen/horizontal_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.ahmedhafez.bookshelf.DetailActivity"
+    tools:context="com.ahmedhafez.bookshelf.activities.DetailActivity"
     tools:showIn="@layout/activity_detail">
 
     <LinearLayout

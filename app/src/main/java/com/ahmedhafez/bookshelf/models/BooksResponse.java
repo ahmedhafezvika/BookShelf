@@ -1,5 +1,6 @@
-package com.ahmedhafez.bookshelf;
+package com.ahmedhafez.bookshelf.models;
 
+import com.ahmedhafez.bookshelf.models.Book;
 import com.google.gson.annotations.SerializedName;
 import java.util.List;
 

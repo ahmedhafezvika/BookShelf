@@ -1,4 +1,6 @@
-package com.ahmedhafez.bookshelf;
+package com.ahmedhafez.bookshelf.retrofit;
+
+import com.ahmedhafez.bookshelf.utilities.Constants;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

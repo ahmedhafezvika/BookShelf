@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SearchActivity"
+            android:name=".activities.SearchActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -23,22 +23,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ShelfActivity"
+            android:name=".activities.ShelfActivity"
             android:label="@string/title_activity_shelf"
             android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".SearchActivity">
+            android:parentActivityName=".activities.SearchActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".SearchActivity"/>
+                android:value=".activities.SearchActivity"/>
         </activity>
         <activity
-            android:name=".DetailActivity"
+            android:name=".activities.DetailActivity"
             android:label="@string/title_activity_detail"
             android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".ShelfActivity">
+            android:parentActivityName=".activities.ShelfActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ShelfActivity"/>
+                android:value=".activities.ShelfActivity"/>
         </activity>
     </application>
 

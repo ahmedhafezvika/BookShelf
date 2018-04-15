@@ -1,4 +1,4 @@
-package com.ahmedhafez.bookshelf;
+package com.ahmedhafez.bookshelf.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.ahmedhafez.bookshelf.R;
+import com.ahmedhafez.bookshelf.models.Book;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

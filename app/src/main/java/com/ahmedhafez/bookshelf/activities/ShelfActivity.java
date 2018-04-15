@@ -1,23 +1,22 @@
-package com.ahmedhafez.bookshelf;
+package com.ahmedhafez.bookshelf.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 
+import com.ahmedhafez.bookshelf.models.Book;
+import com.ahmedhafez.bookshelf.adapters.BooksAdapter;
+import com.ahmedhafez.bookshelf.R;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 
-public class ShelfActivity extends AppCompatActivity implements BooksAdapter.BooksAdapterOnClickHandler{
+public class ShelfActivity extends AppCompatActivity implements BooksAdapter.BooksAdapterOnClickHandler {
 
     private RecyclerView booksGrid;
     private BooksAdapter adapter;
@@ -44,6 +43,12 @@ public class ShelfActivity extends AppCompatActivity implements BooksAdapter.Boo
         booksList = gson.fromJson(data, typeToken);
         adapter = new BooksAdapter(this, this, booksList);
         booksGrid.setAdapter(adapter);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     @Override

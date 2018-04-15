@@ -1,4 +1,6 @@
-package com.ahmedhafez.bookshelf;
+package com.ahmedhafez.bookshelf.retrofit;
+
+import com.ahmedhafez.bookshelf.models.BooksResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
