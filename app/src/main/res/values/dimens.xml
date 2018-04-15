@@ -1,0 +1,9 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="search_bar_margin">20dp</dimen>
+    <dimen name="search_button_text_size">25sp</dimen>
+    <dimen name="card_view_elevation">4dp</dimen>
+    <dimen name="book_text_size">20sp</dimen>
+    <dimen name="book_text_margin_top">10dp</dimen>
+</resources>
